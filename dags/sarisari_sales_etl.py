@@ -63,7 +63,13 @@ SELECT s.order_id,
     dp.product_key,
     s.quantity, s.unit_price, s.line_total, s.batch_id
 FROM staging.stg_sales s
-JOIN dw.dim_store ds ON ds.store_id = s.store_id
+JOIN dw.dim_store ds
+    ON ds.store_id = s.store_id
+    AND s.order_date >= ds.valid_from
+    AND (
+        s.order_date < ds.valid_to
+        OR ds.valid_to IS NULL
+    )
 JOIN dw.dim_product dp ON dp.product_id = s.product_id
 ON CONFLICT (order_id, product_key) DO UPDATE
     SET date_key = EXCLUDED.date_key,
