@@ -1,0 +1,9 @@
+order_id,order_date,store_id,store_name,barangay,city,product_id,product_name,category,quantity,unit_price
+ORD-1009,2026-10-05,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P007,Skyflakes crackers,Snacks,5,10.00
+ORD-1009,2026-10-05,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P008,Bear Brand powdered milk,Dairy,3,14.00
+ORD-1010,2026-10-06,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P009,C2 Green Tea 500ml,Beverages,4,22.00
+ORD-1010,2026-10-06,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P010,Pancit Canton,Noodles,6,18.00
+ORD-1011,2026-10-07,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P011,Mang Juan chicharon,Snacks,10,15.00
+ORD-1011,2026-10-07,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P007,Skyflakes crackers,Snacks,8,10.00
+ORD-1012,2026-10-08,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,P009,C2 Green Tea 500ml,Beverages,-3,22.00
+ORD-1013,2026-10-08,S004,Tindahan ng Mama Mo,Brgy. San Juan 1,Noveleta,,Mang Juan chicharon,Snacks,4,15.00

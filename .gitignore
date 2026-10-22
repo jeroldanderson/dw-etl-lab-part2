@@ -1,0 +1,6 @@
+logs/
+datalake/raw/
+datalake/staged/
+__pycache__/
+*.pyc
+.DS_Store
