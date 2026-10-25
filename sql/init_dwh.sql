@@ -30,11 +30,35 @@ CREATE TABLE IF NOT EXISTS dw.dim_date (
 
 CREATE TABLE IF NOT EXISTS dw.dim_store (
     store_key SERIAL PRIMARY KEY,
-    store_id TEXT NOT NULL UNIQUE,
+    store_id TEXT NOT NULL,  -- removed the UNIQUE constraint because we allow multiple versions of the same store_id (Type 2 SCD)
     store_name TEXT,
     barangay TEXT,
-    city TEXT
+    city TEXT,
+
+    valid_from DATE NOT NULL,
+    valid_to DATE,
+    is_current BOOLEAN NOT NULL DEFAULT TRUE,
+
+    -- ensures that valid_to is either NULL or later than valid_from
+    CONSTRAINT check_store_validity
+        CHECK (valid_to IS NULL OR valid_to > valid_from),
+
+    -- ensures that if is_current is TRUE, valid_to must be NULL, and if is_current is FALSE, valid_to must not be NULL 
+    CONSTRAINT check_current_store
+        CHECK (
+            (is_current = TRUE AND valid_to IS NULL)
+            OR
+            (is_current = FALSE AND valid_to IS NOT NULL)
+        ),
+
+    -- makes sure that there are no overlapping validity periods for the same store_id
+    CONSTRAINT unique_store_version
+        UNIQUE (store_id, valid_from)
 );
+
+CREATE UNIQUE INDEX IF NOT EXISTS uq_current_store
+ON dw.dim_store (store_id)
+WHERE is_current = TRUE;
 
 CREATE TABLE IF NOT EXISTS dw.dim_product (
     product_key SERIAL PRIMARY KEY,
