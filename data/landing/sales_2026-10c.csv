@@ -1,0 +1,6 @@
+order_id,order_date,store_id,store_name,barangay,city,product_id,product_name,category,quantity,unit_price
+ORD-1014,2026-10-09,S001,Aling Nena Sari-Sari,Brgy. 415,Manila,P001,Instant pancit canton,Noodles,4,16.00
+ORD-1014,2026-10-09,S001,Aling Nena Sari-Sari,Brgy. 415,Manila,P002,3-in-1 coffee sachet,Beverages,6,9.00
+ORD-1015,2026-10-10,S001,Aling Nena Sari-Sari,Brgy. 415,Manila,P005,Rice 1kg,Grains,2,52.00
+ORD-1016,2026-10-11,S001,Aling Nena Sari-Sari,Brgy. 415,Manila,P003,Canned sardines 155g,Canned goods,3,25.00
+ORD-1017,2026-10-11,S002,Mang Tonyo Store,Brgy. Holy Spirit,Quezon City,P004,Softdrink 1.5L,Beverages,2,75.00
